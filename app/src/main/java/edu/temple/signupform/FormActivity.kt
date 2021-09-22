@@ -26,22 +26,23 @@ class FormActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
 
             if (name.text.toString() == ""){
-                name.setError("Name is a required field")
+                name.error = "Name is a required field"
             }
             else if(email.text.toString() == ""){
-                email.setError("Email is a required field")
+                email.error = "Email is a required field"
             }
             else if(password.text.toString() == ""){
-                password.setError("Password is a required field")
+                password.error = "Password is a required field"
             }
             else if(passwordChecker.text.toString() == ""){
-                passwordChecker.setError("Confirm Password is a required field")
+                passwordChecker.error = "Confirm Password is a required field"
             }
             else if(password.text.toString() != passwordChecker.text.toString()){
-                passwordChecker.setError("Password and Confirm Password must match")
+                passwordChecker.error = "Password and Confirm Password must match"
             }
             else {
-                var toast = Toast.makeText(this, "Welcome, " + name.text.toString() + ", to the SignUpForm App", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(this, "Welcome, " + name.text.toString() + ", to the SignUpForm App", Toast.LENGTH_SHORT).show()
             }
 
         }
